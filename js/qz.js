@@ -213,4 +213,51 @@ function optionSelected(answer){
       option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
   }
   next_btn.classList.add("show"); //show the next button if user selected any option
+}function showResult(){
+  info_box.classList.remove("activeInfo"); //hide info box
+  quiz_box.classList.remove("activeQuiz"); //hide quiz box
+  result_box.classList.add("activeResult"); //show result box
+  const scoreText = result_box.querySelector(".score_text");
+  if (userScore > 3){ // if user scored more than 3
+      //creating a new span tag and passing the user score number and total question number saad
+      let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+      scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
+  }
+  else if(userScore > 1){ // if user scored more than 1
+      let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+      scoreText.innerHTML = scoreTag;
+  }
+  else{ // if user scored less than 1
+      let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+      scoreText.innerHTML = scoreTag;
+  }
+}
+
+function startTimer(time){
+  counter = setInterval(timer, 1000);
+  function timer(){
+      timeCount.textContent = time; //changing the value of timeCount with time value
+      time--; //decrement the time value
+      if(time < 9){ //if timer is less than 9
+          let addZero = timeCount.textContent; 
+          timeCount.textContent = "0" + addZero; //add a 0 before time value
+      }
+      if(time < 0){ //if timer is less than 0
+          clearInterval(counter); //clear counter
+          timeText.textContent = "Time Off"; //change the time text to time off
+          const allOptions = option_list.children.length; //getting all option items
+          let correcAns = questions[que_count].answer; //getting correct answer from array
+          for(i=0; i < allOptions; i++){
+              if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
+                  option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
+                  option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
+                  console.log("Time Off: Auto selected correct answer.");
+              }
+          }
+          for(i=0; i < allOptions; i++){
+              option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+          }
+          next_btn.classList.add("show"); //show the next button if user selected any option
+      }
+  }
 }
