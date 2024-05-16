@@ -48,49 +48,51 @@ body{
     background: #fff;
     cursor: pointer;
 }
-ol{
-    position: relative;
-    padding: 0 1.5rem;
-    color: rgb(1,73,73);
-}
-span{
-    display: block;
-    padding: 0.1rem 0.7rem;
-    border-radius: 1rem;
-}
-#answer{
-    margin-top: 2.5rem;
-}
-#stat{
-    margin-top: 1.5rem;
-    color: rgb(6,17,168);
-}
-.buttons{
-    text-align: center;
-}
-footer button{
-    height: 40px;
-    padding: 0 13px;
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    color: #fff;
+
+<!----meee----->
+.info_box{
+    width: 540px;
+    background: #fff;
     border-radius: 5px;
-    background: #007bff;
-    border: 1px solid #007bff;
-    line-height: 10px;
+    transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.95);
     transition: all 0.3s ease;
 }
 
-footer button:hover{
-    background: #0263ca;
+.info_box .info-title{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: 600;
 }
 
+.info_box .info-list{
+    padding: 15px 30px;
+}
+
+.info_box .info-list .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.info_box .info-list .info span{
+    font-weight: 600;
+    color: #007bff;
+}
+.info_box .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    border-top: 1px solid lightgrey;
+}
 footer button.show{
     opacity: 1;
     pointer-events: auto;
