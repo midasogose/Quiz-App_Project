@@ -1,58 +1,78 @@
-
+<!DOCTYPE html>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Wuiz</title>
-
-    <!-- css file link -->
-    <link rel="stylesheet" href="style.css">
+    <title> Create a Quiz App With Timer Using </title>
+    <link rel="stylesheet" href="csss/style.css">
+    <!-- FontAweome CDN Link for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-    <img src="qz logo.jfif" alt="img" id="img" class="img">
-    <h1 id="title">Today's Quiz</h1>
+    <!-- start Quiz button -->
+    <div class="start_btn"><button>Start Quiz</button></div>
 
-    <!-- quiz-container -->
-    <div id="quiz-container">
-        <!-- question container -->
-        <div class="questions">
-            <h2 id="question"></h2>
-            <ol type="A">
-                <li class="option"><span id="option0" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option1" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option2" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option3" onclick="calcScore(this)"></span></li>
-            </ol>
-            <h4 id="stat"></h4>
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Quiz</span></div>
+        <div class="info-list">
+            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your correct answers.</div>
         </div>
-
         <div class="buttons">
-            <button type="button" class="next">Next</button>
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
         </div>
-
     </div>
 
-    <!-- scoreboard section -->
-    <div id="scoreboard">
-        <img src="qz logo.jfif" alt="">
-        <h2 id="score-title">Your Score</h2>
-        <h2 id="score"></h2>
-        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
-        <button type="button" id="check-answer" onclick="checkAnswer()">Check Answers</button>
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Awesome Quiz Application</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+          
+            </div>
+            <div class="option_list">
+        
+            </div>
+        </section>
+
+      
+        <footer>
+            <div class="total_que">
+              
+            </div>
+            <button class="next_btn">Next Que</button>
+        </footer>
     </div>
 
-    <!-- answers section -->
-    <div id="answerBank">
-        <h2>Answers :</h2>
-        <ol type="1" id="answers">
-
-        </ol>
-        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the Quiz!</div>
+        <div class="score_text">
+          
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+        </div>
     </div>
 
-    <!-- javascript file source -->
-    <script src="qz.js"></script>
+    <script src="jss/app.js"></script>
 </body>
 </html>
