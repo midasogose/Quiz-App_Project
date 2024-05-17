@@ -136,6 +136,25 @@ body{
     font-weight: 600;
 }
 <!----booda---->
+.option_list .option .icon.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
+}
+
+footer{
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+footer .total_que span{
+    display: flex;
+    user-select: none;
+}
 section .option_list .option:last-child{
     margin-bottom: 0px;
 }
